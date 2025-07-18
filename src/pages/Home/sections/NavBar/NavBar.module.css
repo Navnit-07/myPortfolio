@@ -1,0 +1,82 @@
+.nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: transparent;
+  font-family: 'Baloo Paaji 2', cursive;
+  font-weight: 700;
+  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));
+  transition: background-color 0.3s ease, padding 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0 auto;
+  transition: min-height 0.3s ease;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.logo {
+  font-size: calc(20px + (30 - 20) * ((100vw - 300px) / (1300 - 300)));
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+/* Affix styles */
+.nav-container.affix {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(222, 226, 230, 0.34);
+  color: #6c757d;
+}
+
+.nav-container.affix .logo {
+  color: #695aa6;
+}
+
+.nav-container.affix .container {
+  min-height: 65px;
+}
+
+/* .nav-container.affix .nav .item .link {
+  color: #6c757d;
+}
+
+.nav-container.affix .hamburger-inner,
+.nav-container.affix .hamburger-inner::before,
+.nav-container.affix .hamburger-inner::after {
+  background-color: #6c757d;
+  transition: background-color 0.3s ease;
+} */

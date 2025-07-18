@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from "./sections/Hero/Hero";
-import NavBar from "./sections/NavBar/NavBar";
-import About from "./sections/About/About";
-import Skills from "./sections/Skills/Skills";
+import Hero from "./sections/Hero/Hero.jsx";
+import NavBar from "./sections/NavBar/NavBar.jsx";
+import About from "./sections/About/About.jsx";
+import Skills from "./sections/Skills/Skills.jsx";
 
 function Home(){
     return(

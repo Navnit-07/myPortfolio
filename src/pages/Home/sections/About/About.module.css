@@ -1,0 +1,42 @@
+.about-container{
+    padding: 70px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem !important;
+    text-align: justify;
+}
+
+.about-img-holder {
+    min-width: 400px;
+    max-width: 400px;
+    margin-right: 20px;
+}
+
+.about-img-holder img{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.section{
+    width: 50%;
+}
+
+@media (max-width: 992px) {
+  .about-img-holder{
+    display: none;
+  }
+  .section{
+    width: 80%;
+  }
+}
+.section .section-subtitle {
+    margin-bottom: 6px;
+    font-weight: 400;
+    opacity: .6;
+}
+
+.section .section-heading{
+    font-size: calc(20px + (35 - 20) * ((100vw - 300px) / (1300 - 300)));
+}

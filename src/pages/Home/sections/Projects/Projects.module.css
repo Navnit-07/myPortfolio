@@ -1,0 +1,22 @@
+.project-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-content .sub-title {
+    margin-bottom: 6px;
+    font-weight: 400;
+    opacity: .6;
+}
+
+.project-content .title{
+    font-size: calc(20px + (35 - 20) * ((100vw - 300px) / (1300 - 300)));
+        margin-bottom: 4rem !important;
+}
+
+.project-container{
+    width: 90%;
+    margin: 0 auto;
+}

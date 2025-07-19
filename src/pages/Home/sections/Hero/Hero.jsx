@@ -1,7 +1,7 @@
-import React, { Suspense, useRef, useEffect } from "react";
+import React, { Suspense, useRef, useEffect, useMemo } from "react";
 import styles from "./Hero.module.css";
 import CustomButton from "../../../../components/Button/CustomButton";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import {
   OrbitControls,
   Environment,
@@ -9,12 +9,23 @@ import {
   useAnimations,
 } from "@react-three/drei";
 
+// Responsive Animated Robot Model
 function AnimatedRobot() {
   const group = useRef();
   const { scene, animations } = useGLTF(
     "/free_droide_de_seguridad_k-2so_by_oscar_creativo.glb"
   );
   const { actions } = useAnimations(animations, group);
+  const { viewport } = useThree();
+
+  // Responsive scale and position based on screen width
+  const { scale, position } = useMemo(() => {
+    const isMobile = viewport.width < 6;
+    return {
+      scale: isMobile ? [0.5, 0.5, 0.5] : [0.8, 0.8, 0.8],
+      position: isMobile ? [0.85, -0.5, 0] : [2.3, -1.0, 0],
+    };
+  }, [viewport.width]);
 
   useEffect(() => {
     if (actions["Wave"]) {
@@ -29,9 +40,9 @@ function AnimatedRobot() {
     <group ref={group} dispose={null}>
       <primitive
         object={scene}
-        scale={[0.8, 0.8, 0.8]}
-        position={[2.2, -1.3, 0]}
-        rotation={[0, Math.PI / 6, 0]}
+        scale={scale}
+        position={position}
+        rotation={[0, -Math.PI / 12, 0]} // slight turn to face center
       />
     </group>
   );
@@ -55,7 +66,7 @@ export default function Hero() {
           </Suspense>
         </Canvas>
       </div>
-      <div className={styles["overlay"]}></div>
+      <div className={styles.overlay}></div>
       <div className={`${styles["header-content"]} ${styles.container}`}>
         <h1 className={styles["header-title"]}>
           <span className={styles["up"]}>HI!</span>

@@ -1,5 +1,5 @@
 .skills-container{
-    width: 80%;
+    width: 50%;
     padding: 70px 10px;
     display: flex;
     justify-content: center;
@@ -27,20 +27,30 @@
         margin-bottom: 4rem !important;
 }
 
-.skills-icons{
+.skills-card{
+    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 32px;
+    gap: 50px;
 }
 
-.skills-icons svg {
+.skills-card svg {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
-.skills-icons svg:hover {
+.skills-card svg:hover {
     transform: scale(1.2);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }

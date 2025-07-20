@@ -1,7 +1,7 @@
 import React, { Suspense, useRef, useEffect, useMemo } from "react";
 import styles from "./Hero.module.css";
-import CustomButton from "../../../../components/Button/CustomButton";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import EncryptButton from "../../../../components/Button/EncryptButton";
 import {
   OrbitControls,
   Environment,
@@ -48,7 +48,12 @@ function AnimatedRobot() {
   );
 }
 
-export default function Hero() {
+export default function Hero({scrollTargetRef}) {
+  function scroll(){
+    console.log("Clicked", scrollTargetRef.current);
+    
+    scrollTargetRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <div className={styles.header}>
       <div className={styles.canvasWrapper}>
@@ -73,7 +78,7 @@ export default function Hero() {
           <span className={styles["down"]}>I am NAVNIT</span>
         </h1>
         <p className={styles["header-subtitle"]}>FULLSTACK WEB DEVELOPER</p>
-        <CustomButton children={"Visit My Works"} opacity={"0.99"} />
+        <EncryptButton onClick={scroll} data={"console.log('me')"}/>
       </div>
     </div>
   );

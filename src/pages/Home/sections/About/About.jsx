@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./About.module.css";
 import imgPerson from "../../../../assets/man.png"
 
-function About() {
+const About = React.forwardRef((prop, ref) => {
   return (
     <>
-      <div className={styles["about-container"]}>
+      <div ref={ref} className={styles["about-container"]}>
         <div className={styles["about-img-holder"]}>
           <img
             src={imgPerson} alt="person"
@@ -37,6 +37,6 @@ function About() {
       </div>
     </>
   );
-}
+})
 
 export default About;

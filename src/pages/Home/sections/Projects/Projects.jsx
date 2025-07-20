@@ -11,36 +11,42 @@ import project6 from "../../../../assets/projectImage/project6.jpg";
 function Projects() {
   const projects = [
     {
+      id: 1,
       image: project1,
       cardTitle: "Campus Navigation System",
       cardDescription:
         "Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.",
     },
     {
+      id: 2,
       image: project2,
       cardTitle: "MedCrypta",
       cardDescription:
         "Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.",
     },
     {
+      id: 3,
       image: project3,
       cardTitle: "Focus On Today",
       cardDescription:
         "Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.",
     },
     {
+      id: 4,
       image: project4,
       cardTitle: "Recipe Blog",
       cardDescription:
         "Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.",
     },
     {
+      id: 5,
       image: project5,
       cardTitle: "Jerry Escapes (Game)",
       cardDescription:
         "Lorem ipsum dolor sit amet pretium consectetur adipiscing elit. Lorem consectetur adipiscing elit.",
     },
     {
+      id: 6,
       image: project6,
       cardTitle: "School Website",
       cardDescription:
@@ -58,6 +64,7 @@ function Projects() {
         {projects.map((project) => {
           return (
             <Card
+              key={project.id}
               image={project.image}
               CardTitle={project.cardTitle}
               CardDescription={project.cardDescription}

@@ -54,3 +54,9 @@
     align-items: center;
     gap: 8px;
 }
+
+@media (max-width: 600px) {
+    .skills-container{
+        width: 90%;
+    }
+}
